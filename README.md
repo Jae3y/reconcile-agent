@@ -216,6 +216,11 @@ defect instead of fixing it.
 
 **▶ [Demo video](DEMO_VIDEO_URL_HERE)** — under 2 minutes.
 
+The recording lives in [`demo/`](demo/) along with notes on what each segment
+shows and how to reproduce it. Everything in it is a live API response — the
+dashboard renders no mock data, so the run in the video can be re-run and the
+numbers checked against `GET /api/runs/{run_id}`.
+
 ---
 
 ## Repo layout
