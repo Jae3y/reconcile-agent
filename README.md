@@ -1,6 +1,6 @@
 # reconcile-agent
 
-**Live dashboard:** https://reconcile-agent-olzdk2g4o-jackson-abetianbes-projects.vercel.app
+**Live dashboard:** https://reconcile-agent.vercel.app
 
 An agent that reconciles **Stripe billing** against a **HubSpot CRM**, fixes the
 safe discrepancies automatically, routes the consequential ones to **Slack** for
@@ -67,7 +67,7 @@ Proof it matters: with the judge stubbed out, the decoy false-action rate is
 
 ## 02 · External apps used
 
-Seven, of which **six are live vendor APIs**:
+Seven, of which **five are genuinely live** (HubSpot, Slack, Claude, Lemma, Arga) — comfortably above the "at least three" requirement:
 
 | App | Live? | What the agent does with it |
 | --- | --- | --- |
@@ -76,13 +76,15 @@ Seven, of which **six are live vendor APIs**:
 | **Claude Sonnet 4.6 (Thinking)** | ✅ real | The judge — via Antigravity CLI subprocess, no API key, no per-token billing |
 | **Lemma** | ✅ real | Tracing — one trace per run, span per stage, judge calls as generations |
 | **Arga Labs** | ✅ real | Digital twins of the vendor APIs; catalog queried live |
-| **Gmail** | ✅ real | Draft-only dunning email. **There is no send path anywhere in the codebase** |
+| **Gmail** | ⚠️ twin | Draft-only dunning email. **There is no send path anywhere in the codebase.** Real-Gmail path is implemented (`scripts/gmail_auth.py`) but the demo account is locked pending a Google appeal, so it runs on the twin |
 | **Stripe** | ⚠️ twin | Real Stripe SDK pointed at the Arga twin / local simulator (see below) |
 
-**Honest note on Stripe:** the code uses the official Stripe SDK and real API
-shapes, but is pointed at a twin rather than a live account. Switching is one
-environment variable (`STRIPE_MODE=real`). The dashboard's integration strip
-labels each service `real` or `twin` — it never claims a simulated service is live.
+**Honest note on Stripe and Gmail:** both use the official SDK and real API
+shapes, but are pointed at a twin rather than a live account. Each is switched
+independently by one environment variable (`STRIPE_MODE=real`, `GMAIL_MODE=real`).
+The dashboard's integration strip labels every service `real`, `twin` or
+`external` — it never claims a simulated service is live, and the header shows
+the live count (`4/6 live vendor APIs · simulated: Stripe, Gmail`).
 
 The same is true of the twin backend generally: Arga's free plan allows 10
 validation runs/month, which this build exhausted, so `sim/twin_sim.py` re-serves
