@@ -129,6 +129,15 @@ GMAIL_MODE=real        STRIPE_MODE=twin
 
 Gmail needs a one-time consent: `python scripts/gmail_auth.py`.
 
+### Inspecting what the agent did
+
+```bash
+python scripts/show_slack.py    # read the real #approvals messages back out of Slack
+```
+
+This reads messages back through a *different* Slack API call than the one that
+wrote them, so it demonstrates the round trip rather than replaying a local log.
+
 ### Safety interlocks
 
 - `ARGA_ALLOW_PROVISION=false` — `agent/twins.py` raises `ArgaQuotaLock` rather
