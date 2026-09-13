@@ -215,12 +215,19 @@ defect instead of fixing it.
 
 ## 05 · Demo video
 
-**▶ [Demo video](DEMO_VIDEO_URL_HERE)** — under 2 minutes.
+**▶ [Watch the demo (2 min)](https://github.com/Jae3y/reconcile-agent/raw/main/demo/reconcile-agent-demo.mp4)**
+— or open [`demo/reconcile-agent-demo.mp4`](demo/reconcile-agent-demo.mp4) in this repo.
 
-The recording lives in [`demo/`](demo/) along with notes on what each segment
-shows and how to reproduce it. Everything in it is a live API response — the
-dashboard renders no mock data, so the run in the video can be re-run and the
-numbers checked against `GET /api/runs/{run_id}`.
+| Segment | What it shows |
+| --- | --- |
+| Dashboard | Live integration probes against HubSpot and Slack; a real run streaming stage by stage over SSE; the judge's actual reasoning; the **0/5** decoy result |
+| Terminal | Read-back verification catching a write that *reported* success but changed nothing |
+| Slack | Destructive actions waiting on a human reaction, each carrying the judge's confidence and the real HubSpot record IDs |
+
+Nothing in the recording is staged — every number is a live API response. The
+dashboard renders no mock data, so any run in the video can be re-run and checked
+against `GET /api/runs/{run_id}`. See [`demo/README.md`](demo/README.md) for the
+exact commands to reproduce it.
 
 ---
 

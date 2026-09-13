@@ -1,13 +1,10 @@
 # Demo
 
-Drop the demo video and screenshots here.
-
 ## Video
 
-**Put the file at `demo/reconcile-agent-demo.mp4`** (or `.mov` / `.webm`).
+**[`reconcile-agent-demo.mp4`](reconcile-agent-demo.mp4)** — 14 MB, under 2 minutes.
 
-Then add the link to the top-level [README](../README.md) — replace
-`DEMO_VIDEO_URL_HERE` in section *05 · Demo video*.
+Linked from section *05 · Demo video* of the top-level [README](../README.md).
 
 ### ⚠️ GitHub file-size limit
 
