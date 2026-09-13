@@ -216,3 +216,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- reconcile-agent: local secrets & session state (added during build) ---
+client_secret*.json
+gmail_token.json
+token.json
+.arga-session.json
+.env.arga-backup
+runs/
+traces/
+
+# Next.js
+web/node_modules/
+web/.next/
+web/.env.local
+web/.vercel
+
+.tunnel_url
+runs/judge_cache.bak/
