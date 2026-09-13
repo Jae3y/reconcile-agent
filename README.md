@@ -1,6 +1,7 @@
 # reconcile-agent
 
-**Live dashboard:** https://reconcile-agent.vercel.app
+**Live dashboard:** https://reconcile-agent.vercel.app  
+**Demo video (1:51):** [Watch Demo Video](./demo.mp4)
 
 An agent that reconciles **Stripe billing** against a **HubSpot CRM**, fixes the
 safe discrepancies automatically, routes the consequential ones to **Slack** for
