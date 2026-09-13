@@ -234,3 +234,9 @@ web/.vercel
 
 .tunnel_url
 runs/judge_cache.bak/
+
+# The Python `lib/` rule above also matched web/src/lib/, silently excluding the
+# dashboard's API client, types and hooks - the Vercel build then failed with
+# "Can't resolve '@/lib/api'". Re-include the frontend lib directory explicitly.
+!web/src/lib/
+!web/src/lib/**
